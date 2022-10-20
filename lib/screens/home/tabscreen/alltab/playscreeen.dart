@@ -107,7 +107,7 @@ class PlayScreen extends StatelessWidget {
                             ],
                           ),
                           Icon(
-                            Icons.square,
+                            Icons.fullscreen,
                             color: Colors.white,
                           )
                         ],
