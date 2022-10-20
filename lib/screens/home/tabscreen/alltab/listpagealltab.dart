@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_application_youtubeui/screens/home/tabscreen/alltab/playscreeen.dart';
 
 class AlltabListScreen extends StatelessWidget {
   final Image;
@@ -22,13 +23,19 @@ class AlltabListScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Container(
-          width: double.infinity,
-          height: 240,
-          decoration: BoxDecoration(
-              color: Colors.grey,
-              image: DecorationImage(
-                  image: NetworkImage(Image), fit: BoxFit.cover)),
+        GestureDetector(
+          onTap: () {
+            Navigator.of(context)
+                .push(MaterialPageRoute(builder: (context) => PlayScreen()));
+          },
+          child: Container(
+            width: double.infinity,
+            height: 240,
+            decoration: BoxDecoration(
+                color: Colors.grey,
+                image: DecorationImage(
+                    image: NetworkImage(Image), fit: BoxFit.cover)),
+          ),
         ),
         Container(
           width: double.infinity,
@@ -42,8 +49,7 @@ class AlltabListScreen extends StatelessWidget {
                 Row(
                   children: [
                     CircleAvatar(
-                      backgroundImage: NetworkImage(
-                         Image2),
+                      backgroundImage: NetworkImage(Image2),
                     ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
@@ -52,7 +58,7 @@ class AlltabListScreen extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                           text1,
+                            text1,
                             style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 13,
@@ -80,7 +86,7 @@ class AlltabListScreen extends StatelessWidget {
               ],
             ),
           ),
-        )
+        ),
       ],
     );
   }
